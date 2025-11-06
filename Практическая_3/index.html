@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Практическая 3</title>
+        <style>
+            * {
+                font-size: 1.1vw;
+            }
+            /* МЕНЮ */
+            .menu {
+                display: flex;
+                flex-wrap: nowrap;
+                justify-content: flex-end;
+                margin: 0 0.2vw;
+            }
+            .menu .menu-item {
+                text-align: center;
+                padding: 0.5vw;
+                margin: 0 0.5vw;
+            }
+
+            .menu-item:first-of-type {
+                background: lightskyblue;
+                color: white;
+            }
+            /* ЛОГО */
+            .logo {
+                display: flex;
+                background: lightskyblue;
+                color: white;
+                font-weight: bold;
+                padding: 0.7vw;
+                margin: auto;
+                justify-content: flex-start;
+            }
+
+            /* ГАЛЛЕРЕЯ */
+            .gallery {
+                display: grid;
+                width: 90%;
+                height: 40vh;
+                margin: 1vw auto;
+                grid-template-rows: repeat(3, 1fr);
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .gallery img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            .gallery > div {
+                overflow: hidden
+            }
+            .gallery > .img1 {
+                grid-area: 1 / 1 / 3 / 3;
+            }
+            .gallery > .img2 {
+                grid-area: 1 / 3 / 2 / 4;
+            }
+            .gallery > .img3 {
+                grid-area: 2 / 3 / 3 / 4;
+            }
+            .gallery > .img4 {
+                grid-area: 3 / 1 / 4 / 2;
+            }
+            .gallery > .img5 {
+                grid-area: 3 / 2 / 4 / 3;
+            }
+            .gallery > .img6 {
+                grid-area: 3 / 3 / 4 / 4;
+            }
+
+            /* ОСНОВНОЕ */
+            .container {
+                display: grid;
+                width: 90%;
+                height: 80vh;
+                margin: 1vw auto;
+                grid-row-gap: 0.5vw;
+                grid-column-gap: 1vw;
+                grid-template-rows: repeat(4, 1fr);
+                grid-template-columns: 1fr 1fr 0.75fr;
+            }
+            .container > .block1 {
+                grid-area: 1 / 1 / 3 / 2;
+                border: solid thin lightblue;
+                border-radius: 20px;
+            }
+            .container > .block2 {
+                grid-area: 1 / 2 / 3 / 3;
+                border: solid thin lightpink;
+                border-radius: 20px;
+            }
+            .container > .block3 {
+                grid-area: 3 / 1 / 5 / 2;
+                border: solid thin lightgrey;
+                border-radius: 20px;
+            }
+            .container > .block4 {
+                grid-area: 3 / 2 / 5 / 3;
+                border: solid thin lightskyblue;
+                border-radius: 20px;
+            }
+            .container > .block5 {
+                grid-area: 1 / 3 / 5 / 4;
+                border-left: solid thin black;
+            }
+
+            /* БОЛЬШИЕ БЛОКИ */
+            .big-block {
+                width: 100%;
+                height: 100%;
+                text-align: center;
+            }
+            .big-block p {
+                text-align: justify;
+                margin: 0 0.5vw;
+            }
+            .big-block img {
+                width: 95%;
+                height: 30%;
+                object-fit: cover;
+                overflow: hidden;
+                border-radius: 20px;
+                margin-top: 0.5vw;
+            }
+            .big-block a {
+                float: left;
+                margin: 0.5vw;
+                color: brown;
+            }
+
+            .block2 .big-block a,
+            .block4 .big-block a {
+                float: right;
+                margin: 0.5vw;
+                color: brown;
+            }
+
+            /* МАЛЕНЬКИЕ БЛОКИ */
+            .mini-block {
+                width: 98%;
+                height: 19.5%;
+                margin: 0.2vw auto;
+                padding: 1vw;
+            }
+            .mini-block img {
+                float: right;
+                width: 45%;
+                height: 95%;
+                overflow: hidden;
+                object-fit: cover;
+                margin-left: 1vw;
+            }
+            .mini-block h4 {
+                text-align: right;
+            }
+            .mini-block p {
+                text-align: justify;
+            }
+            .mini-block [type="button"] {
+                float: right;
+                background: lightskyblue;
+                border: solid thin black;
+                border-radius: 5px;
+                color: white;
+            }
+
+            /* ФУТЕР */
+            hr {
+                width: 95%;
+                margin: 1vw auto;
+                border: 0.05vw solid #ddd;
+            }
+            footer {
+                padding: 0.5vw 0;
+                font-size: 1em;
+            }
+            footer p {
+                margin: 0 5vw;
+            }
+
+            @media (max-width: 600px) {
+                * {
+                    font-size: 1em;
+                }
+                .menu {
+                    flex-wrap: wrap;
+                    justify-content: flex-start;
+                }
+                .menu .menu-item {
+                    width: 50%;
+                    box-sizing: border-box;
+                    margin: 0.5vw 0;
+                }
+
+                .gallery {
+                    height: 80vh;
+                    grid-template-rows: repeat(6, 1fr);
+                    grid-template-columns: 1fr;
+                }
+                .gallery > .img1 {
+                    grid-area: 1 / 1;
+                }
+                .gallery > .img2 {
+                    grid-area: 2 / 1;
+                }
+                .gallery > .img3 {
+                    grid-area: 3 / 1;
+                }
+                .gallery > .img4 {
+                    grid-area: 4 / 1;
+                }
+                .gallery > .img5 {
+                    grid-area: 5 / 1;
+                }
+                .gallery > .img6 {
+                    grid-area: 6 / 1;
+                }
+
+                .container {
+                    width: 80%;
+                    height: auto;
+                    margin: 1vw auto;
+                    grid-template-rows: repeat(4, auto) 2fr;
+                    grid-template-columns: 1fr;
+                    grid-row-gap: 2vw;
+                }
+                .container > .block1 {
+                    grid-area: 1 / 1;
+                }
+                .container > .block2 {
+                    grid-area: 2 / 1;
+                }
+                .container > .block3 {
+                    grid-area: 3 / 1;
+                }
+                .container > .block4 {
+                    grid-area: 4 / 1;
+                }
+                .container > .block5 {
+                    grid-area: 5 / 1;
+                    border: none;
+                }
+
+                .big-block img {
+                    height: 80px;
+                }
+                .big-block {
+                    padding: 1vw;
+                    width: 95%;
+                    padding-right: 1vw;
+                }
+
+                .mini-block {
+                    height: 150px;
+                    margin: 1.5vw auto;
+                    padding: 2vw;
+                }
+                .mini-block img {
+                    height: 70%;
+                    width: 40%;
+                }
+
+                .big-block p {
+                    margin: 1vw 0;
+                    font-size: 0.9em;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="menu">
+            <div class="menu-item">Меню 1</div>
+            <div class="menu-item">Меню 2</div>
+            <div class="menu-item">Меню 3</div>
+            <div class="menu-item">Меню 4</div>
+        </div>
+        <div class="logo">Легенды авиации</div>
+
+        <div class="gallery">
+            <div class="img1">
+                <img src="image/image8.jpg" alt="Рисунок 1">
+            </div>
+            <div class="img2">
+                <img src="image/image2.jpg" alt="Рисунок 2">
+            </div>
+            <div class="img3">
+                <img src="image/image3.jpg" alt="Рисунок 3">
+            </div>
+            <div class="img4">
+                <img src="image/image4.jpg" alt="Рисунок 4">
+            </div>
+            <div class="img5">
+                <img src="image/image5.jpg" alt="Рисунок 5">
+            </div>
+            <div class="img6">
+                <img src="image/image1.jpg" alt="Рисунок 6">
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="block1">
+                <div class="big-block">
+                    <img src="image/image5.jpg" alt="">
+                    <h4>Ан-124</h4>
+                    <p>Ан-124 «Руслан» — советский тяжёлый дальний транспортный самолёт, разработанный в 
+                        1980-х годах конструкторским бюро им. О. К. Антонова. Является одним из крупнейших в 
+                        мире серийных грузовых самолётов (уступая по размерам только Ан-225 «Мрия», который был 
+                        создан на его основе).</p>
+                    <a href="#">Подробнее</a>
+                </div>
+            </div>
+            <div class="block2">
+                <div class="big-block">
+                    <h4>Airbus A320</h4>
+                    <p>Airbus A320 — семейство среднемагистральных узкофюзеляжных самолётов для авиалиний малой и 
+                        средней протяжённости, разработанных европейским консорциумом «Airbus S.A.S». 
+                        Общее число произведённых A320 достигло 12 260 штук.</p>
+                    <img src="image/image3.jpg" alt="">
+                    <a href="#">Подробнее</a>
+                </div>
+            </div>
+            <div class="block3">
+                <div class="big-block">
+                    <img src="image/image8.jpg" alt="">
+                    <h4>Ту-154</h4>
+                    <p>Ту-154 - советский и российский трехдвигательный реактивный пассажирский авиалайнер 
+                        и транспортный самолет 1-го класса для авиалиниий средней протяженности. Первый полет 
+                        Ту-154 был выполнен 3 октября 1968 года.</p>
+                    <a href="#">Подробнее</a>
+                </div>
+            </div>
+            <div class="block4">
+                <div class="big-block">
+                    <h4>Boeing 737</h4>
+                    <p>Boeing 737 - семейство узкофюзеляжных ближне-среднемагистральных пассажирских и транспортных 
+                        самолетов. Самолет производится корпорацией Boeing с 1967 года. Boeing 737 стал самым массовым 
+                        пассажирским самолётом за всю историю пассажирского авиастроения. </p>
+                    <img src="image/image6.jpeg" alt="">
+                    <a href="#">Подробнее</a>
+                </div>
+            </div>
+            <div class="block5">
+                <div class="mini-block">
+                    <img src="image/image2.jpg" alt="рисунок 10">
+                    <h4>Beechcraft</h4>
+                    <p>Поднялся в воздух ...</p>
+                    <form>
+                        <input type="button" value="Подробнее">
+                    </form>
+                </div>
+                <div class="mini-block">
+                    <img src="image/image12.jpg" alt="рисунок 10">
+                    <h4>Сухой Су-57</h4>
+                    <p>Cy-57 предназначен ...</p>
+                    <form>
+                        <input type="button" value="Подробнее">
+                    </form>
+                </div>
+                <div class="mini-block">
+                    <img src="image/image11.png" alt="рисунок 10">
+                    <h4>Gulfstream G650</h4>
+                    <p>Самолёт может ...</p>
+                    <form>
+                        <input type="button" value="Подробнее">
+                    </form>
+                </div>
+                <div class="mini-block">
+                    <img src="image/image4.jpg" alt="рисунок 10">
+                    <h4>F-16</h4>
+                    <p>Истребитель 4го пок..</p>
+                    <form>
+                        <input type="button" value="Подробнее">
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+        <footer>
+            <p>
+            Б9123-09.03.04 (2 пг)<br>
+            Павлова Диана<br>
+            2025
+            </p>
+        </footer>
+    </body>
+</html>

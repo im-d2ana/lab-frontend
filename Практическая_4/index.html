@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Практическая 4</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.3.0/mdb.min.css" rel="stylesheet">
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <style>
+        p {
+            text-align: justify;
+        }
+    </style>
+  </head>
+
+  <body class="container">
+
+    <!-- НАВИГАЦИЯ -->
+  <header>
+    <nav class="navbar navbar-expand-md bg-light navbar-light" >
+        <a class="navbar-brand p-2" href="#">Легенды авиации</a>  
+
+        <button 
+            class="navbar-toggler" 
+            type="button" 
+            data-bs-toggle="collapse" 
+            data-bs-target="#menu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="menu">
+            <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link active" href="#">Ан-124</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Сравнение моделей самолетов</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#">Контакты</a>
+            </li>
+            </ul>
+        </div>
+    </nav>
+  </header>
+
+   <!-- ГАЛЛЕРЕЯ -->
+    <div class="container mt-3">
+
+        <div class="row g-0">
+            <div class="col-lg-8 col-12">
+                <div class="ratio ratio-21x9 bg-image hover-zoom">
+                    <img src="image/image8.jpg" class="img-fluid w-100 h-100" style="object-fit: cover;" alt="рисунок 1">
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-12">
+                <div class="ratio ratio-21x9 bg-image hover-zoom">
+                    <img src="image/image2.jpg" class="img-fluid w-100 h-100" style="object-fit: cover;" alt="рисунок 2">
+                </div>
+
+                <div class="ratio ratio-21x9 bg-image hover-zoom">
+                    <img src="image/image3.jpg" class="img-fluid w-100 h-100" style="object-fit: cover;" alt="рисунок 3">
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-0">
+            <div class="col-lg-4 col-12">
+                <div class="ratio ratio-21x9 bg-image hover-zoom">
+                    <img src="image/image4.jpg" class="img-fluid w-100 h-100" style="object-fit: cover;" alt="рисунок 4">
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-12">
+                <div class="ratio ratio-21x9 bg-image hover-zoom">
+                    <img src="image/image5.jpg" class="img-fluid w-100 h-100" style="object-fit: cover;" alt="рисунок 5">
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-12">
+                <div class="ratio ratio-21x9 bg-image hover-zoom">
+                    <img src="image/image1.jpg" class="img-fluid w-100 h-100" style="object-fit: cover;" alt="рисунок 6">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main class="container mt-3">
+        
+        <!-- Большие блоки -->
+        <div class="row">
+            <div class="col-lg-4 col-sm-12">
+                <div class="card">
+                    <div class="ratio ratio-16x9">
+                        <img src="image/image5.jpg" class="p-4 rounded" style="object-fit: cover;" alt="рисунок 7">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title text-center">Ан-124</h3>
+                        <p class="card-text">
+                            Ан-124 «Руслан» — советский тяжёлый дальний транспортный самолёт, 
+                            разработанный в 1980-х годах конструкторским бюро им. О. К. Антонова. 
+                            Является одним из крупнейших в мире серийных грузовых самолётов (уступая по размерам 
+                            только Ан-225 «Мрия», который был создан на его основе).
+                        </p>
+                        <a href="#" class="text-decoration-underline" style="color: brown;">Подробнее</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-sm-12">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3 class="card-title text-center">Airbus A320</h3>
+                        <p class="card-text">
+                            Airbus A320 — семейство среднемагистральных узкофюзеляжных самолётов для 
+                            авиалиний малой и средней протяжённости, разработанных европейским консорциумом 
+                            «Airbus S.A.S». Общее число произведённых A320 достигло 12 260 штук. 
+                            Этот показатель позволил Airbus впервые за сорок лет обойти 737-е семейство Boeing.
+                        </p>
+                        <div class="ratio ratio-16x9">
+                            <img src="image/image1.jpg" class="rounded" style="object-fit: cover;" alt="рисунок 8">
+                        </div>
+                        <a href="#" class="text-decoration-underline d-block text-end mt-3" style="color: brown;">Подробнее</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Маленькие блоки -->
+            <div class="col-lg-4 col-sm-12">
+                <div class="card h-50">
+                    <div class="card-body">
+                        <div class="row align-items-center">
+
+                            <div class="col-sm-6">
+                                <h5 class="card-title text-end">Beechcraft</h5>
+                                <p class="card-text text-end">Beechcraft - американский турбовинтовой самолёт, 
+                                    19-местный авиалайнер ...</p>
+                                <a href="#" class="btn float-end" style="background: lightskyblue; color: white;">Подробнее</a>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <img src="image/image2.jpg" class="img-fluid rounded" alt="Beechcraft">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card h-50">
+                    <div class="card-body">
+                        <div class="row align-items-center">
+
+                            <div class="col-sm-6">
+                                <h5 class="card-title text-end">Сухой Су-57</h5>
+                                <p class="card-text text-end">Су-57 — многофункциональный комплекс фронтовой авиации пятого поколения ...</p>
+                                <a href="#" class="btn float-end" style="background: lightskyblue; color: white;">Подробнее</a>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <img src="image/image12.jpg" class="img-fluid rounded" alt="Сухой Су-57">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Большие блоки -->
+        <div class="row mt-3">
+            <div class="col-lg-4 col-sm-12">
+                <div class="card">
+                    <div class="ratio ratio-16x9">
+                        <img src="image/image8.jpg" class="p-4 rounded" style="object-fit: cover;" alt="рисунок 9">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title text-center">Ty-154</h3>
+                        <p class="card-text">
+                            Ту-154 - один из самых быстрых в мире серийных пассажирских лайнеров с крейсерной 
+                            скоростью более 900 км/ч, а также самый массовый советский реактивный пассажирский самолет, 
+                            который до конца 2000-х годов оставался одним из основных самолетов на маршрутах средней дальности.
+                        </p>
+                        <a href="#" class="text-decoration-underline" style="color: brown;">Подробнее</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-sm-12">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h3 class="card-title text-center">Boeing 737</h3>
+                        <p class="card-text">
+                            Boeing 737 - семейство узкофюзеляжных ближне-среднемагистральных пассажирских и транспортных самолетов. 
+                            Самолет производится корпорацией Boeing с 1967 года. Boeing 737 стал самым массовым пассажирским 
+                            самолётом за всю историю пассажирского авиастроения.
+                        </p>
+                        <div class="ratio ratio-16x9">
+                            <img src="image/image6.jpeg" class="rounded" style="object-fit: cover;" alt="рисунок 10">
+                        </div>
+                        <a href="#" class="text-decoration-underline d-block text-end mt-3" style="color: brown;">Подробнее</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Маленькие блоки -->
+            <div class="col-lg-4 col-sm-12">
+                <div class="card h-50">
+                    <div class="card-body">
+                        <div class="row align-items-center">
+
+                            <div class="col-sm-6">
+                                <h5 class="card-title text-end">Gulfstream G650</h5>
+                                <p class="card-text text-end">Gulfstream G650 - это флагманский бизнес-джет, 
+                                    известный своей высокой скоростью ...</p>
+                                <a href="#" class="btn float-end" style="background: lightskyblue; color: white;">Подробнее</a>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <img src="image/image11.png" class="img-fluid rounded" alt="Gulfstream G650">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card h-50">
+                    <div class="card-body">
+                        <div class="row align-items-center">
+
+                            <div class="col-sm-6">
+                                <h5 class="card-title text-end">F-16</h5>
+                                <p class="card-text text-end">F-16 - американский многофункциональный лёгкий истребитель четвёртого поколения..</p>
+                                <a href="#" class="btn float-end" style="background: lightskyblue; color: white;">Подробнее</a>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <img src="image/image4.jpg" class="img-fluid rounded" alt="F-16">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="mt-3 p-3">
+        <p>
+            Павлова Диана<br>
+            Б9123-09.03.04 (2 пг)<br>
+            2025
+        </p>
+    </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.3.0/mdb.min.js"></script>
+  </body>
+</html>

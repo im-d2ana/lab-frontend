@@ -1,0 +1,42 @@
+extends template
+
+block nav 
+    nav 
+        +createMenu(dictMenu, 'Главная')
+
+block content 
+    div(class="gallery")
+        +createGallery(listImages)
+
+    div(class="container")
+        div(class="container__section container__section--pos1")
+            div(class="content-block")
+                img(class="content-block__img" src= require("../images/" + listSections[0].image))
+                h3= listSections[0].title
+                p(class="content-block__text")= listSections[0].text
+                a(class="content-block__link" href="#")= lnk
+
+        div(class="container__section container__section--pos2")
+            div(class="content-block")
+                h3= listSections[1].title
+                p(class="content-block__text")= listSections[1].text
+                img(class="content-block__img" src= require("../images/" + listSections[1].image))
+                a(class="content-block__link content-block__link--right" href="#")= lnk
+
+        div(class="container__section container__section--pos3")
+            div(class="content-block")
+                img(class="content-block__img" src= require("../images/" + listSections[2].image))
+                h3= listSections[2].title
+                p(class="content-block__text")= listSections[2].text
+                a(class="content-block__link" href="#")= lnk
+
+        div(class="container__section container__section--pos4")
+            div(class="content-block")
+                h3= listSections[3].title
+                p(class="content-block__text")= listSections[3].text
+                img(class="content-block__img" src= require("../images/" + listSections[3].image))
+                a(class="content-block__link content-block__link--right" href="#")= lnk
+
+        div(class="container__section container__section--pos5")
+            - for (var i = 4; i <= 7; i++)
+                +createMiniBlock(listSections[i])

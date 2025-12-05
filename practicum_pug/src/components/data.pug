@@ -1,0 +1,476 @@
+block variables
+  - var title = 'Легенды авиации'
+  - var title2 = 'Ан-124 "Руслан"'
+  - var title3 = 'Сравнение моделей самолетов'
+  - var lnk = 'Подробнее'
+  -
+    var dictMenu = {
+      'Главная': 'index.html', 
+      'Самолеты': "#",  
+      'Вертолеты': "#", 
+      'Список': "table.html"
+    }
+
+  - var listImages = ['image5.jpg', 'image2.jpg', 'image3.jpg', 'image4.jpg', 'image1.jpg', 'image6.jpeg', 'image8.jpg', 'image10.jpeg', 'image11.png', 'image12.jpg']
+
+  -
+    var listSections = [
+      {
+        'title': 'Ан-124',
+        'image': 'image5.jpg', 
+        'text': 'Ан-124 «Руслан» — советский тяжёлый дальний транспортный самолёт, разработанный в 1980-х годах конструкторским бюро им. О. К. Антонова. Является одним из крупнейших в мире серийных грузовых самолётов (уступая по размерам только Ан-225 «Мрия», который был создан на его основе).'
+      },
+      {
+        'title': 'Airbus A320',
+        'image': 'image3.jpg', 
+        'text': 'Airbus A320 — семейство среднемагистральных узкофюзеляжных самолётов для авиалиний малой и средней протяжённости, разработанных европейским консорциумом «Airbus S.A.S». Общее число произведённых A320 достигло 12 260 штук.'
+      },
+      {
+        'title': 'Ту-154',
+        'image': 'image8.jpg', 
+        'text': 'Ту-154 - советский и российский трехдвигательный реактивный пассажирский авиалайнер и транспортный самолет 1-го класса для авиалиниий средней протяженности. Первый полет Ту-154 был выполнен 3 октября 1968 года.'
+      },
+      {
+        'title': 'Boeing 737',
+        'image': 'image6.jpeg', 
+        'text': 'Boeing 737 - семейство узкофюзеляжных ближне-среднемагистральных пассажирских и транспортных самолетов. Самолет производится корпорацией Boeing с 1967 года. Boeing 737 стал самым массовым пассажирским самолётом за всю историю пассажирского авиастроения.'
+      },
+      {
+        'title': 'Beechcraft',
+        'image': 'image2.jpg', 
+        'text': 'Поднялся в воздух ...'
+      },
+      {
+        'title': 'Сухой Су-57',
+        'image': 'image12.jpg', 
+        'text': 'Cy-57 предназначен ...'
+      },
+      {
+        'title': 'Gulfstream G650',
+        'image': 'image11.png', 
+        'text': 'Самолёт может ...'
+      },
+      {
+        'title': 'F-16',
+        'image': 'image4.jpg', 
+        'text': 'Истребитель 4го пок..'
+      }
+    ]
+
+  -
+    var structures = [
+      {
+        menuItem: "Ан-124 'Руслан'",
+        pict: "image5.jpg",
+        firstP: `Ан-124 «Руслан» — советский тяжёлый дальний транспортный самолёт, разработанный в 1980-х годах конструкторским бюро им. О. К. Антонова. Является одним из крупнейших в мире серийных грузовых самолётов (уступая по размерам только Ан-225 «Мрия», который был создан на его основе).`,
+        secondP: `Своё название «Руслан» получил в честь богатыря из русских былин. А его основным предназначением является перевозка крупногабаритных и тяжёлых грузов на межконтинентальные расстояния.`,
+        list1_title: 'Конструктивные особенности',
+        list1_1: 'Многостоечное шасси с 24 колесами.',
+        list1_2: 'Носовой и хвостовой грузовые люки.',
+        list1_3: 'Встроенные бортовые краны и лебёдки.',
+        list1_4: 'Система изменения клиренса (дорожного просвета).',
+        list2_title: 'Интересные факты',
+        list2_1: 'В 1985 году «Руслан» установил 21 мировой рекорд, в том числе подняв груз массой 171 219 кг на высоту 10 750 метров.',
+        list2_2: 'Во время пандемии COVID-19 самолёты Ан-124 активно использовались для международной перевозки медицинского оборудования и средств защиты.',
+        list2_3: 'Ан-124 стал основой для создания единственного в мире сверхтяжёлого транспортного самолёта Ан-225 «Мрия», который был удлинён, получил два дополнительных двигателя и усиленную конструкцию для перевозки космического челнока «Буран».',
+        list2_4: 'Ан-124 «Руслан» — это легенда мировой транспортной авиации. Более 30 лет он остаётся рабочей лошадкой для перевозки уникальных и сверхтяжёлых грузов, демонстрируя выдающиеся инженерные решения.'
+      }
+    ]
+
+  - var sort_options = ['Нет', 'Название', 'Тип', 'Первый полет', 'Длина', 'Размах крыла', 'Макс. скорость']
+
+  -
+    var aircraftData = [
+      {
+        name: "Airbus A320",
+        type: "Пассажирский узкофюзеляжный",
+        firstFlight: 1987,
+        length: 37.6,
+        wingspan: 34.1,
+        maxSpeed: 840
+      },
+      {
+        name: "Boeing 747-8",
+        type: "Пассажирский широкофюзеляжный",
+        firstFlight: 2011,
+        length: 76.3,
+        wingspan: 68.4,
+        maxSpeed: 988
+      },
+      {
+        name: "Airbus A380",
+        type: "Пассажирский широкофюзеляжный",
+        firstFlight: 2005,
+        length: 72.7,
+        wingspan: 79.8,
+        maxSpeed: 1020
+      },
+      {
+        name: "Boeing 737 MAX",
+        type: "Пассажирский узкофюзеляжный",
+        firstFlight: 2016,
+        length: 39.5,
+        wingspan: 35.9,
+        maxSpeed: 839
+      },
+      {
+        name: "Concorde",
+        type: "Сверхзвуковой пассажирский",
+        firstFlight: 1969,
+        length: 61.7,
+        wingspan: 25.6,
+        maxSpeed: 2179
+      },
+      {
+        name: "Cessna 172",
+        type: "Легкий самолет",
+        firstFlight: 1955,
+        length: 8.3,
+        wingspan: 11.0,
+        maxSpeed: 228
+      },
+      {
+        name: "Сухой Су-57",
+        type: "Истребитель 5-го поколения",
+        firstFlight: 2010,
+        length: 19.8,
+        wingspan: 14.0,
+        maxSpeed: 2600
+      },
+      {
+        name: "F-22 Raptor",
+        type: "Истребитель 5-го поколения",
+        firstFlight: 1997,
+        length: 18.9,
+        wingspan: 13.6,
+        maxSpeed: 2410
+      },
+      {
+        name: "F-35 Lightning II",
+        type: "Многоцелевой истребитель",
+        firstFlight: 2006,
+        length: 15.7,
+        wingspan: 10.7,
+        maxSpeed: 1930
+      },
+      {
+        name: "МиГ-29",
+        type: "Фронтовой истребитель",
+        firstFlight: 1977,
+        length: 17.3,
+        wingspan: 11.4,
+        maxSpeed: 2400
+      },
+      {
+        name: "Сухой Су-35",
+        type: "Многоцелевой истребитель",
+        firstFlight: 1988,
+        length: 21.9,
+        wingspan: 15.3,
+        maxSpeed: 2500
+      },
+      {
+        name: "Ту-160",
+        type: "Стратегический бомбардировщик",
+        firstFlight: 1981,
+        length: 54.1,
+        wingspan: 55.7,
+        maxSpeed: 2230
+      },
+      {
+        name: "B-2 Spirit",
+        type: "Стратегический бомбардировщик",
+        firstFlight: 1989,
+        length: 21.0,
+        wingspan: 52.4,
+        maxSpeed: 1010
+      },
+      {
+        name: "B-52 Stratofortress",
+        type: "Стратегический бомбардировщик",
+        firstFlight: 1952,
+        length: 48.5,
+        wingspan: 56.4,
+        maxSpeed: 957
+      },
+      {
+        name: "Сухой Су-25",
+        type: "Штурмовик",
+        firstFlight: 1975,
+        length: 15.5,
+        wingspan: 14.4,
+        maxSpeed: 950
+      },
+      {
+        name: "A-10 Thunderbolt II",
+        type: "Штурмовик",
+        firstFlight: 1972,
+        length: 16.3,
+        wingspan: 17.5,
+        maxSpeed: 706
+      },
+      {
+        name: "Ан-225 'Мрия'",
+        type: "Транспортный",
+        firstFlight: 1988,
+        length: 84.0,
+        wingspan: 88.4,
+        maxSpeed: 850
+      },
+      {
+        name: "Ан-124 'Руслан'",
+        type: "Транспортный",
+        firstFlight: 1982,
+        length: 69.1,
+        wingspan: 73.3,
+        maxSpeed: 865
+      },
+      {
+        name: "C-130 Hercules",
+        type: "Военно-транспортный",
+        firstFlight: 1954,
+        length: 29.8,
+        wingspan: 40.4,
+        maxSpeed: 592
+      },
+      {
+        name: "Boeing 787 Dreamliner",
+        type: "Пассажирский широкофюзеляжный",
+        firstFlight: 2009,
+        length: 57.0,
+        wingspan: 60.1,
+        maxSpeed: 956
+      },
+      {
+        name: "Embraer E190",
+        type: "Региональный пассажирский",
+        firstFlight: 2004,
+        length: 36.2,
+        wingspan: 28.7,
+        maxSpeed: 890
+      },
+      {
+        name: "Airbus A350",
+        type: "Пассажирский широкофюзеляжный",
+        firstFlight: 2013,
+        length: 66.8,
+        wingspan: 64.8,
+        maxSpeed: 1090
+      },
+      {
+        name: "Bombardier CRJ900",
+        type: "Региональный пассажирский",
+        firstFlight: 2001,
+        length: 36.2,
+        wingspan: 24.9,
+        maxSpeed: 882
+      },
+      {
+        name: "Dassault Rafale",
+        type: "Многоцелевой истребитель",
+        firstFlight: 1986,
+        length: 15.3,
+        wingspan: 10.9,
+        maxSpeed: 1912
+      },
+      {
+        name: "Eurofighter Typhoon",
+        type: "Многоцелевой истребитель",
+        firstFlight: 1994,
+        length: 15.9,
+        wingspan: 10.9,
+        maxSpeed: 2124
+      },
+      {
+        name: "F-16 Fighting Falcon",
+        type: "Многоцелевой истребитель",
+        firstFlight: 1974,
+        length: 15.0,
+        wingspan: 9.96,
+        maxSpeed: 2120
+      },
+      {
+        name: "F-15 Eagle",
+        type: "Истребитель",
+        firstFlight: 1972,
+        length: 19.4,
+        wingspan: 13.1,
+        maxSpeed: 2655
+      },
+      {
+        name: "F/A-18 Super Hornet",
+        type: "Палубный истребитель",
+        firstFlight: 1995,
+        length: 18.4,
+        wingspan: 13.6,
+        maxSpeed: 1915
+      },
+      {
+        name: "Сухой Су-34",
+        type: "Фронтовой бомбардировщик",
+        firstFlight: 1990,
+        length: 23.3,
+        wingspan: 14.7,
+        maxSpeed: 1900
+      },
+      {
+        name: "Ту-95",
+        type: "Стратегический бомбардировщик",
+        firstFlight: 1952,
+        length: 49.1,
+        wingspan: 50.0,
+        maxSpeed: 925
+      },
+      {
+        name: "B-1B Lancer",
+        type: "Стратегический бомбардировщик",
+        firstFlight: 1974,
+        length: 44.8,
+        wingspan: 41.8,
+        maxSpeed: 1328
+      },
+      {
+        name: "A400M Atlas",
+        type: "Военно-транспортный",
+        firstFlight: 2009,
+        length: 45.1,
+        wingspan: 42.4,
+        maxSpeed: 780
+      },
+      {
+        name: "Ил-76",
+        type: "Военно-транспортный",
+        firstFlight: 1971,
+        length: 46.6,
+        wingspan: 50.5,
+        maxSpeed: 900
+      },
+      {
+        name: "Gulfstream G650",
+        type: "Бизнес-джет",
+        firstFlight: 2009,
+        length: 29.4,
+        wingspan: 30.4,
+        maxSpeed: 956
+      },
+      {
+        name: "Cessna Citation X",
+        type: "Бизнес-джет",
+        firstFlight: 1993,
+        length: 22.0,
+        wingspan: 19.5,
+        maxSpeed: 1127
+      },
+      {
+        name: "Dassault Falcon 7X",
+        type: "Бизнес-джет",
+        firstFlight: 2005,
+        length: 23.2,
+        wingspan: 26.2,
+        maxSpeed: 951
+      },
+      {
+        name: "Pilatus PC-12",
+        type: "Утилитарный",
+        firstFlight: 1991,
+        length: 14.4,
+        wingspan: 16.3,
+        maxSpeed: 528
+      },
+      {
+        name: "Diamond DA42",
+        type: "Легкий самолет",
+        firstFlight: 2002,
+        length: 8.6,
+        wingspan: 13.5,
+        maxSpeed: 356
+      },
+      {
+        name: "Lockheed Martin C-5M Super Galaxy",
+        type: "Стратегический военно-транспортный",
+        firstFlight: 1968,
+        length: 75.3,
+        wingspan: 67.9,
+        maxSpeed: 922
+      },
+      {
+        name: "Boeing 777-300ER",
+        type: "Пассажирский широкофюзеляжный",
+        firstFlight: 2003,
+        length: 73.9,
+        wingspan: 64.8,
+        maxSpeed: 945
+      },
+      {
+        name: "de Havilland DHC-6 Twin Otter",
+        type: "Легкий транспортный",
+        firstFlight: 1965,
+        length: 15.8,
+        wingspan: 19.8,
+        maxSpeed: 314
+      },
+      {
+        name: "Northrop Grumman E-2 Hawkeye",
+        type: "Самолет ДРЛО",
+        firstFlight: 1960,
+        length: 17.6,
+        wingspan: 24.6,
+        maxSpeed: 648
+      },
+      {
+        name: "Saab JAS 39 Gripen",
+        type: "Многоцелевой истребитель",
+        firstFlight: 1988,
+        length: 14.1,
+        wingspan: 8.4,
+        maxSpeed: 2200
+      },
+      {
+        name: "Lockheed Martin F-117 Nighthawk",
+        type: "Ударный самолет",
+        firstFlight: 1981,
+        length: 20.1,
+        wingspan: 13.2,
+        maxSpeed: 993
+      },
+      {
+        name: "Boeing P-8 Poseidon",
+        type: "Противолодочный / патрульный",
+        firstFlight: 2009,
+        length: 39.5,
+        wingspan: 37.6,
+        maxSpeed: 907
+      },
+      {
+        name: "Pilatus PC-21",
+        type: "Учебно-тренировочный",
+        firstFlight: 2002,
+        length: 11.2,
+        wingspan: 9.1,
+        maxSpeed: 685
+      },
+      {
+        name: "Dassault Mirage 2000",
+        type: "Многоцелевой истребитель",
+        firstFlight: 1978,
+        length: 14.4,
+        wingspan: 9.1,
+        maxSpeed: 2340
+      },
+      {
+        name: "Яковлев Як-130",
+        type: "Учебно-боевой",
+        firstFlight: 1996,
+        length: 11.5,
+        wingspan: 9.7,
+        maxSpeed: 1060
+      },
+      {
+        name: "Boeing 767-300F",
+        type: "Грузовой широкофюзеляжный",
+        firstFlight: 1995,
+        length: 54.9,
+        wingspan: 47.6,
+        maxSpeed: 850
+      }
+    ];

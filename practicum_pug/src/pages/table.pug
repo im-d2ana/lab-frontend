@@ -1,0 +1,98 @@
+extends template
+
+block nav 
+    nav 
+        +createMenu(dictMenu, 'Список')
+
+block header 
+    .logo
+        h1.logo__title= title3
+
+block content 
+    details 
+        summary График
+        form
+            p
+                b Значение по оси ОХ
+                br
+                input(type="radio" name="axis_x")
+                | Тип
+                br
+                input(type="radio" name="axis_x")
+                | Год первого полета
+                br
+                input(type="radio" name="axis_x")
+                | Макс. скорость
+        form
+            p 
+                b Значение по оси ОУ
+                br
+                input(type="radio" name="axis_y")
+                | Максимальный размах крыла
+                br
+                input(type="radio" name="axis_y")
+                | Минимальный размах крыла
+                br
+                input(type="radio" name="axis_y")
+                | Количество самолетов
+        form
+            p 
+                input(type="button" value="Построить")
+        p Здесь будет график
+
+    details 
+        summary Фильтр
+        form
+            p
+                label Название: 
+                input(type="text")
+            p
+                label Тип: 
+                input(type="text")
+            p
+                label Год первого полета: 
+                input(type="text")
+            p
+                label Длина:
+                | от 
+                input(type="text")
+                | до 
+                input(type="text")
+            p
+                label Размах крыла:
+                | от 
+                input(type="text")
+                | до 
+                input(type="text")
+            p
+                label Макс. скорость:
+                | от 
+                input(type="text")
+                | до 
+                input(type="text")
+            p 
+                input(type="button" value="Найти")
+
+    details 
+        summary Сортировка
+        form
+            p 
+                label Первый уровень:
+                select(name="level_1")
+                    +createOptions(sort_options)
+                | по убыванию?
+                input(type="checkbox")
+            p 
+                label Второй уровень:
+                select(name="level_2")
+                    +createOptions(sort_options)
+                | по убыванию?
+                input(type="checkbox")
+            p 
+                label Третий уровень:
+                select(name="level_3")
+                    +createOptions(sort_options)
+                | по убыванию?
+                input(type="checkbox")
+
+    +createTable(aircraftData)

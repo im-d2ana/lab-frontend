@@ -1,0 +1,50 @@
+mixin createMenu(menu, active)
+    each value, key in menu 
+        if active == key 
+            a.active(href= value)= key 
+        else
+            a(href= value)= key
+
+mixin createMenuRuslan(menu, active)
+    if menu['Главная']
+        a(href= menu['Главная'])= 'Главная'
+    
+    a.active(href= "#")= active 
+
+    each value, key in menu 
+        if key != 'Главная'
+            a(href= value)= key
+
+mixin createGallery(imageList)
+    - var images = imageList.slice(0, 6)
+    each image, index in images
+        - var className = 'gallery__image--pos' + (index + 1)
+
+        if image == 'image5.jpg'
+            a(href="ruslan.html" class=className)
+                img(class="gallery__image" src=require(`../images/${image}`) alt="Рисунок " + (index + 1))
+
+        else
+            div(class=className)
+                img(class="gallery__image" src=require(`../images/${image}`) alt="Рисунок " + (index + 1))
+
+mixin createMiniBlock(listItem)
+    div(class="mini-block")
+        img(class="mini-block__img" src= require("../images/" + listItem.image))
+        h3(class="mini-block__title")= listItem.title
+        p(class="mini-block__text")= listItem.text
+        button(class="mini-block__button" type="button" href="#")= lnk
+
+mixin createOptions(list)
+    - for (var i = 0; i < list.length; i++)
+        option(value="#{i+1}")= list[i]
+
+mixin createTable(dict)
+    table
+        tr
+            each head in ['Название', 'Тип', 'Первый полет', 'Длина', 'Размах крыла', 'Макс. скорость']
+                th= head
+        each item in dict
+            tr
+                each field in Object.values(item)
+                    td= field

@@ -1,0 +1,31 @@
+extends template
+
+block nav 
+    nav  
+        +createMenuRuslan(dictMenu, title2)
+
+block header 
+    .logo
+        h1.logo__title= title2
+
+block content
+    div(class="ruslan-block")
+        img(class="ruslan-block__img" src= require("../images/" + structures[0].pict))
+
+        div(class="ruslan-block__text")
+            p= structures[0].firstP
+            p= structures[0].secondP
+
+            h3= structures[0].list1_title
+            ol
+                li= structures[0].list1_1
+                li= structures[0].list1_2
+                li= structures[0].list1_3
+                li= structures[0].list1_4
+
+            h3= structures[0].list1_title
+            ul
+                li= structures[0].list2_1
+                li= structures[0].list2_2
+                li= structures[0].list2_3
+                li= structures[0].list2_4

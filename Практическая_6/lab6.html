@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Практическая 6</title>
+    </head>
+    <body>
+        <script>
+            const text = "еловека_бычно_воспит__ы_он_бтьь,бм,_мыа_тяоы__олтсизтв__ж_ьччьчи_онс_аул_лтсачесае,кат_огтнн_—_мывил";
+
+            document.write("Дано:<br>");
+            document.write(`${text}<br><br>`);
+
+            const l = text.length;
+            const n = Math.ceil(Math.sqrt(l));
+
+            function buildMatrix(text, n) {
+                const m = [];
+                for (let i = 0; i < n; i++) {
+                    m[i] = [];
+                    for (let j = 0; j < n; j++) {
+                        m[i][j] = "_";
+                    }
+                }
+
+                let k = 0;
+                for (let i = 0; i < n; i++) {
+                    for (let j = 0; j < n; j++) {
+                        if (k < text.length) m[j][i] = text[k++];
+                    }
+                }
+                return m;
+            }
+
+            const matrix = buildMatrix(text, n);
+            let h = '<table>';
+            for (let i = 0; i < matrix.length; i++) {
+                h += '<tr>';
+                for (let j = 0; j < matrix[i].length; j++) {
+                    h += `<td>${matrix[i][j]}</td>`;
+                }
+                h += '</tr>';
+            }
+            h += '</table><br><br>';
+            document.write(h);
+
+            function route1(n) {
+                let text = [];
+                let top = 0, bottom = n - 1, left = 0, right = n - 1;
+                while (top <= bottom && left <= right) {
+                    for (let i = top; i <= bottom; i++) {
+                        text.push([i, left]);
+                    }
+                    left++;
+                    for (let i = left; i <= right; i++) {
+                        text.push([bottom, i]);
+                    }
+                    bottom--;
+                    for (let i = bottom; i >= top; i--) {
+                        text.push([i, right]);
+                    }
+                    right--;
+                    for (let i = right; i >= left; i--) {
+                        text.push([top, i]);
+                    }
+                    top++;
+                }
+                return text;
+            }
+
+            function route2(n) {
+                let text = [];
+                let top = 0, bottom = n - 1, left = 0, right = n - 1;
+                while (top <= bottom && left <= right) {
+                    for (let i = right; i >= left; i--) {
+                        text.push([top, i]);
+                    }
+                    top++;
+                    for (let i = top; i <= bottom; i++) {
+                        text.push([i, left]);
+                    }
+                    left++;
+                    for (let i = left; i <= right; i++) {
+                        text.push([bottom, i]);
+                    }
+                    bottom--;
+                    for (let i = bottom; i >= top; i--) {
+                        text.push([i, right]);
+                    }
+                    right--;
+                }
+                return text;
+            }
+
+            function route3(n) {
+                let text = [];
+                let top = 0, bottom = n - 1, left = 0, right = n - 1;
+                while (top <= bottom && left <= right) {
+                    for (let i = bottom; i >= top; i--) {
+                        text.push([i, right]);
+                    }
+                    right--;
+                    for (let i = right; i >= left; i--) {
+                        text.push([top, i]);
+                    }
+                    top++;
+                    for (let i = top; i <= bottom; i++) {
+                        text.push([i, left]);
+                    }
+                    left++;
+                    for (let i = left; i <= right; i++) {
+                        text.push([bottom, i]);
+                    }
+                    bottom--;
+                }
+                return text;
+            }
+
+            function route4(n) {
+                let text = [];
+                let top = 0, bottom = n - 1, left = 0, right = n - 1;
+                while (top <= bottom && left <= right) {
+                    for (let i = left; i <= right; i++) {
+                        text.push([bottom, i]);
+                    }
+                    bottom--;
+                    for (let i = bottom; i >= top; i--) {
+                        text.push([i, right]);
+                    }
+                    right--;
+                    for (let i = right; i >= left; i--) {
+                        text.push([top, i]);
+                    }
+                    top++;
+                    for (let i = top; i <= bottom; i++) {
+                        text.push([i, left]);
+                    }
+                    left++;
+                }
+                return text;
+            }
+
+            function decrypt(matrix, route) {
+                let result = '';
+                for (let i = 0; i < route.length; i++) {
+                    let row = route[i][0];
+                    let col = route[i][1];
+                    result += matrix[row][col];
+                }
+                return result;
+            }
+
+            const routes = [route1, route2, route3, route4];
+            for (let i = 0; i < routes.length; i++) {
+                let cur = routes[i](n);
+                let shipher = decrypt(matrix, cur);
+                let res = shipher.split("_").join(" ");
+                document.write(res + "<br><br>");
+            }
+
+
+            let summ = function(...args) {
+                let res = [];
+                let sum = 0;
+                for (let i in args) {
+                    arr = args[i].split(' ');
+                    
+                    let float = [];
+                    for (let j = 0; j < arr.length; j++) {
+                        if (parseFloat(arr[j]) == parseInt(arr[j]) && arr[j].includes('.') == false) {
+                            continue;
+                        } else {
+                            float.push(Math.round(arr[j] * 100000));
+                        }
+                    }
+
+                    let mmax = float[0];
+                    for (let j = 1; j < float.length; j++) {
+                        if (float[j] > mmax) {
+                            mmax = float[j];
+                        }
+                    }
+                    res.push(mmax / 100000);
+                }
+                document.write(res+"<br>");
+                
+                for (let i = 0; i < res.length; i++) {
+                    sum += res[i];
+                }
+                return sum;
+            };
+
+            let result = summ('7 -5.90999 8 -8.001 -7.8342124', '3 2.90999 8 6.8342124');
+            document.write(result);
+
+        </script>
+    </body>
+</html>

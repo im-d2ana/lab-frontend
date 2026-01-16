@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Практическая 7</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2>Операции с комплексными числами</h2>
+    <div class="task">
+        <img id="img1" src="img1.png">
+        <div class="input">
+            <form>
+                <h3>Форма задания числа:</h3>
+                <p>
+                    <label><input type="radio" id="type1" name="numberType" checked> Алгебраическая</label><br>
+                    <label><input type="radio" id="type2" name="numberType"> Тригонометрическая</label>
+                </p>
+                <p>
+                    <input type="button" id="changeButton" value="Показать">
+                </p>
+                <div id="input-type">
+                    <!-- алгебраическая форма -->
+                    <div id="alg-form">
+                        <p>
+                            <label>a =
+                                <input type="number" id="input1">
+                            </label>
+                        </p>
+                        <p>
+                            <label>b =
+                                <input type="number" id="input2">
+                            </label>
+                        </p>
+                    </div>
+
+                    <!-- тригонометрическая форма -->
+                    <div id="trig-form" style="display: none;">
+                        <p>
+                            <label>r =
+                                <input type="number" id="input1-trig">
+                            </label>
+                        </p>
+                        <p>
+                            <label>φ =
+                                <input type="number" id="input2-trig">
+                            </label>
+                        </p>
+                    </div>
+                </div>
+                <p>
+                    <label id="find-label">Найти:</label><br>
+                    <select id="tasks" multiple size="3">
+                        <option value="1">Действительную часть числа</option>
+                        <option value="2">Аргумент числа</option>
+                        <option value="3">Мнимую часть числа</option>
+                    </select>
+                </p>
+                <p>
+                    <input type="button" id="calculateButton" value="Вычислить">
+                    <input type="button" id="clearButton" value="Очистить">
+                </p>
+            </form>
+        </div>
+        <div id="output">
+        </div>
+    </div>
+</body>
+<script src="program.js"> </script>
+</html>
